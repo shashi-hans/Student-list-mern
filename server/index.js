@@ -5,7 +5,7 @@ const connectDB = require('./config/db');
 const createError = require("http-errors");
 const app = express();
 
-//  Route
+// Required Route
 const studentRoute = require("./routes/api/students");
 
 // Middleware
