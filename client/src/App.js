@@ -7,9 +7,9 @@ import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import CreateStudent from './components/add-student.component'
-import EditStudent from './components/edit-student.component'
-import StudentList from './components/student-list.component'
+import CreateStudent from './components/add-student'
+import EditStudent from './components/edit-student'
+import StudentList from './components/student-list'
 
 function App() {
   return (
