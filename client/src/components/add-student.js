@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import { fullURL } from '../util';
 
 export default class CreateStudent extends Component {
   constructor(props) {
@@ -35,9 +36,10 @@ export default class CreateStudent extends Component {
       email: this.state.email,
       rollno: this.state.rollno
     };
-    axios.post('http://localhost:4000/students/add-student', studentObject)
+    axios.post(fullURL, studentObject)
       .then((res) => {
         alert("Profile Successfully Created");
+        res.status === 200 && alert(res.data.msg)
        } )
       .catch((error) =>alert("Profile not Created due to Wrong or No data given"));
     this.setState({ name: '', email: '', rollno: '' })

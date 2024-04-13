@@ -1,4 +1,3 @@
 {
-    "mongoURI":
-    "mongodb+srv://shashihans87:MeraMongodb_2023@cluster0.uxwnhut.mongodb.net/?retryWrites=true&w=majority"
+    "mongoURI":"mongodb+srv://shashihans87:MeraMongodb_2023@cluster0.uxwnhut.mongodb.net/?retryWrites=true&w=majority"
   }
