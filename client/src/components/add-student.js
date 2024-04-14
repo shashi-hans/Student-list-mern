@@ -52,22 +52,29 @@ export default class CreateStudent extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const studentObject = {
-      name: this.state.name,
-      email: this.state.email,
-      rollno: this.state.rollno
-    };
-    axios.post(fullURL, studentObject)
-      .then((res) => {
-        if (res.status === 200) {
-          this.setState({ showModal: true, modalMessage: "Profile Successfully Created", modalVariant: "success" });
-        }
-      })
-      .catch((error) => {
-        this.setState({ showModal: true, modalMessage: "Profile not Created due to Wrong or No data given", modalVariant: "danger" });
-      });
-    this.setState({ name: '', email: '', rollno: '', errors: { name: '', email: '', rollno: '' } });
+  
+    // Check if any error message is not empty
+    const hasErrors = Object.values(this.state.errors).some(error => error !== '');
+  
+    if (!hasErrors) {
+      const studentObject = {
+        name: this.state.name,
+        email: this.state.email,
+        rollno: this.state.rollno
+      };
+      axios.post(fullURL, studentObject)
+        .then((res) => {
+          if (res.status === 200) {
+            this.setState({ showModal: true, modalMessage: "Profile Successfully Created", modalVariant: "success" });
+          }
+        })
+        .catch((error) => {
+          this.setState({ showModal: true, modalMessage: "Profile not Created due to Wrong or No data given", modalVariant: "danger" });
+        });
+      this.setState({ name: '', email: '', rollno: '', errors: { name: '', email: '', rollno: '' } });
+    }
   };
+  
 
   render() {
     const { errors } = this.state;
