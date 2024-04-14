@@ -19,7 +19,7 @@ app.use(
 app.use(cors({ origin: true, credentials: true }));
 
 // use Routes
-app.use("/students", studentRoute);
+app.use("/api/students", studentRoute);
 
 // Connect Database
 connectDB();
@@ -34,7 +34,7 @@ app.use((req, res, next) => {
   next(createError(404));
 });
 app.use(function (err, req, res, next) {
-  console.error(err.message);
+  console.error("ERROR",err.message);
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
 });

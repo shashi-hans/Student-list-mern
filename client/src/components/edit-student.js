@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import { fullURL } from '../util';
 
 export default class EditStudent extends Component {
   constructor(props) {
@@ -18,9 +19,8 @@ export default class EditStudent extends Component {
     }
   }
   componentDidMount() {
-    axios.get('http://localhost:4000/students/edit-student/' + this.props.match.params.id)
-      .then(res => {
-        
+    axios.get(`${fullURL}/${this.props.match.params.id}`)
+      .then(res => {        
         this.setState({
           name: res.data.name,
           email: res.data.email,
@@ -47,14 +47,15 @@ export default class EditStudent extends Component {
       email: this.state.email,
       rollno: this.state.rollno
     };
-    axios.put('http://localhost:4000/students/update-student/' + this.props.match.params.id, studentObject)
+    axios.put(`${fullURL}/${this.props.match.params.id}`, studentObject)
       .then((res) => {
-        console.log('Student successfully updated')
+        if (res.status === 200) {
+          console.log('Student successfully updated')
+          window.location.href = '/student-list';// Redirect to Student List page
+        }
       }).catch((error) => {
         console.log(error)
       })
-    // Redirect to Student List page
-    window.location.href = '/student-list';
   }
 
   render() {

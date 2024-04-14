@@ -79,22 +79,34 @@ body h3 {
 }
 .header-button {
   background: darkolivegreen;
-  border-radius: 20px;
+  border-radius: 8px;
   margin-top: 30px;
   margin-right: 90px;
   color: white;
+  font-size: 20px;
 }
 .mr-0 {
   margin-right: 0px;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 800;
+}
+.error-message {
+  font-size: 12px;
+  color: red;
+}
 @media screen and (max-width: 500px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
   .navbar-brand {
     font-size: 20px;
     font-weight: 800;
+  }
+  .header-button {
+    font-size: 16px;
   }
   td button {
     margin-top: 15px;

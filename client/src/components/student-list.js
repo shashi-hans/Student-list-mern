@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 import StudentTableRow from './StudentTableRow';
+import { fullURL } from '../util';
 
 export default class StudentList extends Component {
   constructor(props) {
@@ -12,13 +13,15 @@ export default class StudentList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/students/')
+    axios.get(fullURL)
       .then(res => {
+        console.log("List fetched Successfully")
         this.setState({
           students: res.data
         });
       })
       .catch((error) => {
+        console.log("Error fetching List")
         console.log(error);
       })
   }

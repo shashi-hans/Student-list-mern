@@ -2,20 +2,23 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import { fullURL } from '../util';
 export default class StudentTableRow extends Component {
     constructor(props) {
         super(props);
         this.deleteStudent = this.deleteStudent.bind(this);
     }
     deleteStudent() {
-        axios.delete('http://localhost:4000/students/delete-student/' + this.props.obj._id)
+        axios.delete(`${fullURL}/${this.props.obj._id}`)
             .then((res) => {
-                alert("Student Profile successfully deleted!")
+                if (res.status === 200) {
+                    console.log("Student Profile successfully deleted!")
+                    window.location.href = '/student-list';
+                }
             }).catch((error) => {
                 console.log(error)
             })
         // Redirect to Student List page
-        window.location.href = '/student-list';
     }
     render() {
         return (
