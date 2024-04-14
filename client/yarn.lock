@@ -532,7 +532,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-proposal-private-property-in-object@npm:^7.16.0":
+"@babel/plugin-proposal-private-property-in-object@npm:^7.16.0, @babel/plugin-proposal-private-property-in-object@npm:^7.21.11":
   version: 7.21.11
   resolution: "@babel/plugin-proposal-private-property-in-object@npm:7.21.11"
   dependencies:
@@ -12531,6 +12531,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "student-list-mern-client@workspace:."
   dependencies:
+    "@babel/plugin-proposal-private-property-in-object": "npm:^7.21.11"
     "@popperjs/core": "npm:^2.11.8"
     "@testing-library/dom": "npm:^9.3.3"
     "@testing-library/jest-dom": "npm:^5.16.5"
