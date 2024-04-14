@@ -77,3 +77,27 @@ body h3 {
   text-decoration: none;
   background-color: #f7ff01;
 }
+.header-button {
+  background: darkolivegreen;
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-right: 90px;
+  color: white;
+}
+.mr-0 {
+  margin-right: 0px;
+}
+@media screen and (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar-brand {
+    font-size: 20px;
+    font-weight: 800;
+  }
+  td button {
+    margin-top: 15px;
+  }
+}
+

@@ -23,12 +23,12 @@ function App() {
               </Navbar.Brand>
               <Nav className="justify-content-end">
                 <Nav>
-                  <Link to={'/add-student'} className="nav-link">
+                  <Link to={'/add-student'} className="nav-link header-button">
                     Add Student
                   </Link>
                 </Nav>
                 <Nav>
-                  <Link to={'/student-list'} className="nav-link">
+                  <Link to={'/student-list'} className="nav-link header-button mr-0">
                     Student List
                   </Link>
                 </Nav>
